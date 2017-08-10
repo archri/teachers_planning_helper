@@ -1,4 +1,7 @@
 ---
 layout: base
+title: Отправен възел към мрежата
 ---
-Начална страница
+{% for lesson in site.lessons %}
+[{{ lesson.title }}]({{ lesson.url }})
+{% endfor %}
