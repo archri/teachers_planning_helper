@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-xxs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="row-fluid">
+          <span class="span6">{{ include.heading }}</span>
+          <span class="span6 pull-right">{{ include.time }}</span>
+        </div>
+      </div>
+      <div class="panel-body">
+        {% for activity in include.content %}
+          <div class="row">
+            <div class="col-sm-6">{{ activity.say }}</div>
+            <div class="col-sm-6">{{ activity.do }}</div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="panel-footer">{{ include.verify }}</div>
+    </div>
+  </div>
+</div>

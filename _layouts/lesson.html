@@ -20,38 +20,22 @@ layout: base
   {% endcase %}
   {{ page.date | date: "%Y" }}
 </p>
+{% include panel_aims.html aims = page.aims %}
 
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <div class="row-fluid">
-      <span class="span6">Въвличане</span>
-      <span class="span6 pull-right">6</span>
-    </div>
-  </div>
-  <div class="panel-body">{{ page.engage.content }}</div>
-  <div class="panel-footer">{{ page.engage.time }}</div>
-</div>
+{% capture phase=page.phases[0] %}{% endcapture %}
+{% include panel_0_prepare.html phase=phase %}
 
-<div class="panel panel-default">
-  <div class="panel-heading">Изследване</div>
-  <div class="panel-body">{{ page.explore.content }}</div>
-  <div class="panel-footer">{{ page.explore.time }}</div>
-</div>
+{% capture phase=page.phases[1] %}{% endcapture %}
+{% include panel_1_engage.html phase=phase %}
 
-<div class="panel panel-default">
-  <div class="panel-heading">Разяснение</div>
-  <div class="panel-body">{{ page.explain.content }}</div>
-  <div class="panel-footer">{{ page.explain.time }}</div>
-</div>
+{% capture phase=page.phases[2] %}{% endcapture %}
+{% include panel_2_explore.html phase=phase %}
 
-<div class="panel panel-default">
-  <div class="panel-heading">Задълбочаване</div>
-  <div class="panel-body">{{ page.elaborate.content }}</div>
-  <div class="panel-footer">{{ page.elaborate.time }}</div>
-</div>
+{% capture phase=page.phases[3] %}{% endcapture %}
+{% include panel_3_explain.html phase=phase %}
 
-<div class="panel panel-default">
-  <div class="panel-heading">Обобщение</div>
-  <div class="panel-body">{{ page.evaluate.content }}</div>
-  <div class="panel-footer">{{ page.evaluate.time }}</div>
-</div>
+{% capture phase=page.phases[4] %}{% endcapture %}
+{% include panel_4_elaborate.html phase=phase %}
+
+{% capture phase=page.phases[5] %}{% endcapture %}
+{% include panel_5_evaluate.html phase=phase %}

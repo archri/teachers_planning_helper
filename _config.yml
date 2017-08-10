@@ -32,3 +32,11 @@ exclude:
 collections:
   lessons:
     output: true
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "lessons" # a collection in your site, in plural form
+    values:
+      layout: "lesson"

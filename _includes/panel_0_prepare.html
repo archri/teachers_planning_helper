@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-xxs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="row-fluid">
+          <span class="span6">Подготовка</span>
+          <span class="span6 pull-right">
+            {% if include.time %}
+              {{ include.time }}
+            {% else %}
+              5
+            {% endif %}
+          </span>
+        </div>
+      </div>
+      <div class="panel-body">
+        {% for activity in include.content %}
+          <div class="col-sm-6">{{ activity }}</div>
+        {% endfor %}
+      </div>
+      <div class="panel-footer">{{ include.verify }}</div>
+    </div>
+  </div>
+</div>
