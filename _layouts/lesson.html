@@ -1,0 +1,57 @@
+---
+layout: base
+---
+<p>
+  {% assign m = page.date | date: "%-m" %}
+  {{ page.date | date: "%-d" }}
+  {% case m %}
+    {% when '1' %}януари
+    {% when '2' %}февруари
+    {% when '3' %}март
+    {% when '4' %}април
+    {% when '5' %}май
+    {% when '6' %}юни
+    {% when '7' %}юли
+    {% when '8' %}август
+    {% when '9' %}септември
+    {% when '10' %}октомври
+    {% when '11' %}ноември
+    {% when '12' %}декември
+  {% endcase %}
+  {{ page.date | date: "%Y" }}
+</p>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="row-fluid">
+      <span class="span6">Въвличане</span>
+      <span class="span6 pull-right">6</span>
+    </div>
+  </div>
+  <div class="panel-body">{{ page.engage.content }}</div>
+  <div class="panel-footer">{{ page.engage.time }}</div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Изследване</div>
+  <div class="panel-body">{{ page.explore.content }}</div>
+  <div class="panel-footer">{{ page.explore.time }}</div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Разяснение</div>
+  <div class="panel-body">{{ page.explain.content }}</div>
+  <div class="panel-footer">{{ page.explain.time }}</div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Задълбочаване</div>
+  <div class="panel-body">{{ page.elaborate.content }}</div>
+  <div class="panel-footer">{{ page.elaborate.time }}</div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Обобщение</div>
+  <div class="panel-body">{{ page.evaluate.content }}</div>
+  <div class="panel-footer">{{ page.evaluate.time }}</div>
+</div>

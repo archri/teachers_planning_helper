@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/bootstrap-xxs.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
+    {% for stylesheet in page.stylesheets %}
+      <link rel="stylesheet" href="{{ site.baseurl }}/{{ stylesheet }}">
+    {% endfor %}
+  </head>
+  <body>
+    <div class="container">
+      <div class="page-header">
+        <h1>{{ page.title }}</h1>
+      </div>
+      <div class="row">
+        <div class="col-xxs-12">
+          {{ content }}
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js">
+    </script>
+    {% for script in page.scripts %}
+      <script type="text/javascript" src="{{ site.baseurl }}/{{ script }}">
+      </script>
+    {% endfor %}
+  </body>
+</html>
