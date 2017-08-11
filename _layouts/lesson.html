@@ -22,6 +22,8 @@ layout: base
 </p>
 {% include panel_aims.html aims = page.aims %}
 
+{% include panel_base.html base = page.base %}
+
 {% capture phase=page.phases[0] %}{% endcapture %}
 {% include panel_0_prepare.html phase=phase %}
 

@@ -1,36 +1,38 @@
-<div class="panel panel-warning">
-  <div class="panel-heading">Цели</div>
+<div class="panel panel-info">
+  <div class="panel-heading">Въпроси</div>
   <div class="panel-body">
-    <p>{{ include.aims.main }}</p>
     <div class="row">
       <div class="col-md-3 col-sm-6 col-xxs-12">
-        Знания
+        Как изглеждат учениците на края на часа?
         <ul>
-          {% for base in include.aims.knowledge %}
+          {% for base in include.base.look %}
             <li>{{ base }}</li>
           {% endfor %}
         </ul>
       </div>
+
       <div class="col-md-3 col-sm-6 col-xxs-12">
-        Умения
+        Какво знаят и могат?
         <ul>
-          {% for base in include.aims.skill %}
+          {% for base in include.base.can %}
             <li>{{ base }}</li>
           {% endfor %}
         </ul>
       </div>
+
       <div class="col-md-3 col-sm-6 col-xxs-12">
-        Нагласи
+        Какво трябва да преживеят, за да успеят да постигнат целите на урока?
         <ul>
-          {% for base in include.aims.mindset %}
+          {% for base in include.base.experience %}
             <li>{{ base }}</li>
           {% endfor %}
         </ul>
       </div>
+
       <div class="col-md-3 col-sm-6 col-xxs-12">
-        По пътя към смелостта
+        Какво ще проследявам през часа? Как и в кои моменти?
         <ul>
-          {% for base in include.aims.brave %}
+          {% for base in include.base.verify %}
             <li>{{ base }}</li>
           {% endfor %}
         </ul>

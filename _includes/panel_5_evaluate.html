@@ -1,10 +1,16 @@
 <div class="row">
   <div class="col-xxs-12">
-    <div class="panel panel-default">
+    <div class="panel panel-success">
       <div class="panel-heading">
         <div class="row-fluid">
-          <span class="span6">{{ include.heading }}</span>
-          <span class="span6 pull-right">{{ include.time }}</span>
+          <span class="span6">Обобщаване</span>
+          <span class="span6 pull-right">
+            {% if include.time %}
+              {{ include.time }}
+            {% else %}
+              5
+            {% endif %}
+          </span>
         </div>
       </div>
       <div class="panel-body">
