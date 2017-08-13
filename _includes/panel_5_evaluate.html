@@ -25,7 +25,8 @@
     </ul>
   </div>
   <div class="panel-footer">
-    <span class="glyphicon glyphicon-unchecked"></span>
-    {{ verify }}
+    {% for check in verify %}
+      <input type="checkbox">{{ check }}<br>
+    {% endfor %}
   </div>
 </div>

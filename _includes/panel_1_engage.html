@@ -21,7 +21,7 @@
   </div>
   <div class="panel-body">
     <div class="row">
-      <div class="col-sm-4">
+      <div class="col-sm-6">
         <span class="glyphicon glyphicon-refresh"></span>
         Свързване
         <ul>
@@ -30,7 +30,7 @@
         {% endfor %}
         </ul>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-3">
         <span class="glyphicon glyphicon-cog"></span>
         Изправност
         <ul>
@@ -39,12 +39,12 @@
         {% endfor %}
         </ul>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-3">
         <span class="glyphicon glyphicon-send"></span>
         Посока
         <ul>
           <li>В края на този час, всеки един от вас ще може да:
-            <strong>{{ aims.lesson }}</strong>
+            <strong>{{ content.aim }}</strong>
           </li>
           <li>Какво ще направим заедно в края на този раздел?</li>
           <li>Как новото ни умение от този час ще ни помогне за големия проект?</li>
@@ -53,7 +53,8 @@
     </div>
   </div>
   <div class="panel-footer">
-    <span class="glyphicon glyphicon-unchecked"></span>
-    {{ verify }}
+    {% for check in verify %}
+      <input type="checkbox">{{ check }}<br>
+    {% endfor %}
   </div>
 </div>
