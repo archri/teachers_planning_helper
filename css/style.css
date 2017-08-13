@@ -9,3 +9,10 @@
 li {
   text-align: justify;
 }
+@font-face {
+  font-family: 'Coval';
+  src: url('../fonts/Coval-Regular.otf');
+}
+body {
+  font-family: 'Coval'
+}
