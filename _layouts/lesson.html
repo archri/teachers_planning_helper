@@ -22,8 +22,7 @@ layout: base
   {{ page.date | date: "%Y" }}
 </span>
 <div>Помощник-учител: ................................</div>
-
-<h3>Информация</h3>
+<br>
 <div class="panel-group">
   {% include panel_aims.html page=page %}
   {% include panel_base.html base = page.base %}
@@ -31,7 +30,6 @@ layout: base
   {% include panel_0_prepare.html phase=phase %}
 </div>
 
-<h3>Урок</h3>
 <div class="panel-group">
   {% assign phase=page.phases[1]%}
   {% include panel_1_engage.html page=page %}
