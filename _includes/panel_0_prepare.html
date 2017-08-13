@@ -1,11 +1,15 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-    <div class="row-fluid">Подготовка</div>
+    <div class="row-fluid">
+      <span class="glyphicon glyphicon-align-justify"></span>
+      Подготовка
+    </div>
   </div>
   <div class="panel-body">
-    {% for activity in include.content %}
-      <div class="col-sm-6">{{ activity }}</div>
+    <ul>
+    {% for activity in include.phase.content %}
+      <li>{{ activity }}</li>
     {% endfor %}
+    </ul>
   </div>
-  <div class="panel-footer">{{ include.verify }}</div>
 </div>

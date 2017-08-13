@@ -1,7 +1,8 @@
 ---
 layout: base
 ---
-<p>
+<span>{{ page.class }} ........ клас</span>
+<span class="pull-right">
   {% assign m = page.date | date: "%-m" %}
   {{ page.date | date: "%-d" }}
   {% case m %}
@@ -19,25 +20,31 @@ layout: base
     {% when '12' %}декември
   {% endcase %}
   {{ page.date | date: "%Y" }}
-</p>
-{% include panel_aims.html aims = page.aims %}
+</span>
+<div>Помощник-учител: ................................</div>
 
-{% include panel_base.html base = page.base %}
+<h3>Информация</h3>
+<div class="panel-group">
+  {% include panel_aims.html page=page %}
+  {% include panel_base.html base = page.base %}
+  {% assign phase=page.phases[0]%}
+  {% include panel_0_prepare.html phase=phase %}
+</div>
 
-{% capture phase=page.phases[0] %}{% endcapture %}
-{% include panel_0_prepare.html phase=phase %}
+<h3>Урок</h3>
+<div class="panel-group">
+  {% assign phase=page.phases[1]%}
+  {% include panel_1_engage.html page=page %}
 
-{% capture phase=page.phases[1] %}{% endcapture %}
-{% include panel_1_engage.html phase=phase %}
+  {% assign phase=page.phases[2]%}
+  {% include panel_2_explore.html phase=phase %}
 
-{% capture phase=page.phases[2] %}{% endcapture %}
-{% include panel_2_explore.html phase=phase %}
+  {% assign phase=page.phases[3]%}
+  {% include panel_3_explain.html phase=phase %}
 
-{% capture phase=page.phases[3] %}{% endcapture %}
-{% include panel_3_explain.html phase=phase %}
+  {% assign phase=page.phases[4]%}
+  {% include panel_4_elaborate.html phase=phase %}
 
-{% capture phase=page.phases[4] %}{% endcapture %}
-{% include panel_4_elaborate.html phase=phase %}
-
-{% capture phase=page.phases[5] %}{% endcapture %}
-{% include panel_5_evaluate.html phase=phase %}
+  {% assign phase=page.phases[5]%}
+  {% include panel_5_evaluate.html phase=phase %}
+</div>

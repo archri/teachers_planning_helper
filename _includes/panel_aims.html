@@ -1,36 +1,77 @@
+{% assign aims = include.page.aims %}
+{% assign index_integer = include.page.index %}
+{% assign from_integer = include.page.from %}
+{% assign from_float = include.page.from | times: 1.0 %}
+{% assign progress = index_integer | divided_by: from_float | times: 100 %}
 <div class="panel panel-warning">
-  <div class="panel-heading">Цели</div>
+  <div class="panel-heading">
+    <span class="glyphicon glyphicon-send"></span>
+    Цели
+  </div>
   <div class="panel-body">
-    <p>{{ include.aims.main }}</p>
     <div class="row">
       <div class="col-md-3 col-sm-6 col-xxs-12">
+        <span class="glyphicon glyphicon-globe"></span>
+        Голяма цел
+        <ul>
+          {% for base in aims.large %}
+            <li>{{ base }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xxs-12">
+        <span class="glyphicon glyphicon-tint"></span>
+        Урочна цел
+        <ul>
+          {% for base in aims.lesson %}
+            <li>{{ base }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="col-md-6 col-xxs-12">
+        <span class="glyphicon glyphicon-map-marker"></span>
+        Къде сме?
+        <div class="progress">
+          <div class="progress-bar" style='width:{{ progress }}%'>
+            <span>урок {{ index_integer }} от {{ from_integer }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3 col-sm-6 col-xxs-12">
+        <span class="glyphicon glyphicon-book"></span>
         Знания
         <ul>
-          {% for base in include.aims.knowledge %}
+          {% for base in aims.knowledge %}
             <li>{{ base }}</li>
           {% endfor %}
         </ul>
       </div>
       <div class="col-md-3 col-sm-6 col-xxs-12">
+        <span class="glyphicon glyphicon-wrench"></span>
         Умения
         <ul>
-          {% for base in include.aims.skill %}
+          {% for base in aims.skill %}
             <li>{{ base }}</li>
           {% endfor %}
         </ul>
       </div>
       <div class="col-md-3 col-sm-6 col-xxs-12">
+        <span class="glyphicon glyphicon-user"></span>
         Нагласи
         <ul>
-          {% for base in include.aims.mindset %}
+          {% for base in aims.mindset %}
             <li>{{ base }}</li>
           {% endfor %}
         </ul>
       </div>
       <div class="col-md-3 col-sm-6 col-xxs-12">
-        По пътя към смелостта
+        <span class="glyphicon glyphicon-heart"></span>
+        Въвлеченост
         <ul>
-          {% for base in include.aims.brave %}
+          {% for base in aims.engagement %}
             <li>{{ base }}</li>
           {% endfor %}
         </ul>

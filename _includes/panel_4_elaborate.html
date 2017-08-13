@@ -1,24 +1,62 @@
+{% assign time = 10 %}
+{% if include.time %}
+  {% assign time = include.time %}
+{% endif %}
+
+{% assign content = include.phase.content %}
+{% assign verify = include.phase.verify %}
+
 <div class="panel panel-success">
   <div class="panel-heading">
     <div class="row-fluid">
+      <span class="glyphicon glyphicon-wrench"></span>
       <span class="span6">Задълбочаване</span>
       <span class="span6 pull-right">
         <i class="glyphicon glyphicon-time"></i>
-        {% if include.time %}
-          {{ include.time }}
-        {% else %}
-          10
-        {% endif %}
+        {{ time }}
       </span>
     </div>
   </div>
   <div class="panel-body">
-    {% for activity in include.content %}
-      <div class="row">
-        <div class="col-sm-6">{{ activity.say }}</div>
-        <div class="col-sm-6">{{ activity.do }}</div>
+    <div class="row">
+      <div class="col-sm-3">
+        Какво
+        <ul>
+        {% for activity in content.what %}
+          <li>{{ activity }}</li>
+        {% endfor %}
+        </ul>
       </div>
-    {% endfor %}
+      <div class="col-sm-3">
+        Как
+        <ul>
+        {% for activity in content.how %}
+          <li>{{ activity }}</li>
+        {% endfor %}
+        </ul>
+      </div>
+      <div class="col-sm-1">
+        Колко време
+        <p>{{ time | minus:3 }}</p>
+      </div>
+      <div class="col-sm-2">
+        <strong>Проверка на разбирането</strong>
+      </div>
+      <div class="col-sm-2">
+        Действие
+        <ul>
+        {% for activity in content.action %}
+          <li>{{ activity }}</li>
+        {% endfor %}
+        </ul>
+      </div>
+      <div class="col-sm-1">
+        Начало
+      </div>
+    </div>
   </div>
-  <div class="panel-footer">{{ include.verify }}</div>
+  <div class="panel-footer">
+    <span class="glyphicon glyphicon-unchecked"></span>
+    {{ verify }}
+  </div>
 </div>

@@ -1,6 +1,11 @@
 @page {
   size: A4 landscape;
+  /* this affects the margin in the printer settings */
+  margin: 25mm 25mm 25mm 25mm;
 }
 .panel {
   page-break-inside: avoid;
+}
+li {
+  text-align: justify;
 }

@@ -1,24 +1,31 @@
+{% assign time = 10 %}
+{% if include.time %}
+  {% assign time = include.time %}
+{% endif %}
+
+{% assign content = include.phase.content %}
+{% assign verify = include.phase.verify %}
+
 <div class="panel panel-success">
   <div class="panel-heading">
     <div class="row-fluid">
+      <span class="glyphicon glyphicon-pencil"></span>
       <span class="span6">Разясняване</span>
       <span class="span6 pull-right">
         <i class="glyphicon glyphicon-time"></i>
-        {% if include.time %}
-          {{ include.time }}
-        {% else %}
-          10
-        {% endif %}
+        {{ time }}
       </span>
     </div>
   </div>
   <div class="panel-body">
-    {% for activity in include.content %}
-      <div class="row">
-        <div class="col-sm-6">{{ activity.say }}</div>
-        <div class="col-sm-6">{{ activity.do }}</div>
-      </div>
+    <ul>
+    {% for activity in include.phase.content %}
+      <li>{{ activity }}</li>
     {% endfor %}
+    </ul>
   </div>
-  <div class="panel-footer">{{ include.verify }}</div>
+  <div class="panel-footer">
+    <span class="glyphicon glyphicon-unchecked"></span>
+    {{ verify }}
+  </div>
 </div>

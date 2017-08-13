@@ -1,24 +1,59 @@
+{% assign time = 5 %}
+{% if include.time %}
+  {% assign time = include.time %}
+{% endif %}
+
+{% assign aims = include.page.aims %}
+{% assign phase = include.page.phases[1] %}
+{% assign content = phase.content %}
+{% assign verify = phase.verify %}
+
 <div class="panel panel-success">
   <div class="panel-heading">
     <div class="row-fluid">
+      <span class="glyphicon glyphicon-cog"></span>
       <span class="span6">Въвличане</span>
       <span class="span6 pull-right">
-        <i class="glyphicon glyphicon-time"></i>
-        {% if include.time %}
-          {{ include.time }}
-        {% else %}
-          5
-        {% endif %}
+        <span class="glyphicon glyphicon-time"></span>
+          {{ time }}
       </span>
     </div>
   </div>
   <div class="panel-body">
-    {% for activity in include.content %}
-      <div class="row">
-        <div class="col-sm-6">{{ activity.say }}</div>
-        <div class="col-sm-6">{{ activity.do }}</div>
+    <div class="row">
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-refresh"></span>
+        Свързване
+        <ul>
+        {% for activity in content.prelude %}
+          <li>{{ activity }}</li>
+        {% endfor %}
+        </ul>
       </div>
-    {% endfor %}
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-cog"></span>
+        Изправност
+        <ul>
+        {% for activity in content.refresh %}
+          <li>{{ activity }}</li>
+        {% endfor %}
+        </ul>
+      </div>
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-send"></span>
+        Посока
+        <ul>
+          <li>В края на този час, всеки един от вас ще може да:
+            <strong>{{ aims.lesson }}</strong>
+          </li>
+          <li>Какво ще направим заедно в края на този раздел?</li>
+          <li>Как новото ни умение от този час ще ни помогне за големия проект?</li>
+        </ul>
+      </div>
+    </div>
   </div>
-  <div class="panel-footer">{{ include.verify }}</div>
+  <div class="panel-footer">
+    <span class="glyphicon glyphicon-unchecked"></span>
+    {{ verify }}
+  </div>
 </div>
