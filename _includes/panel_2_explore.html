@@ -1,6 +1,6 @@
 {% assign time = 10 %}
-{% if include.time %}
-  {% assign time = include.time %}
+{% if include.phase.time %}
+  {% assign time = include.phase.time %}
 {% endif %}
 
 {% assign content = include.phase.content %}

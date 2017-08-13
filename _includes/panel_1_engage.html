@@ -1,11 +1,10 @@
-{% assign time = 5 %}
-{% if include.time %}
-  {% assign time = include.time %}
-{% endif %}
-
 {% assign aims = include.page.aims %}
 {% assign phase = include.page.phases[1] %}
 {% assign content = phase.content %}
+{% assign time = 5 %}
+{% if phase.time %}
+  {% assign time = phase.time %}
+{% endif %}
 {% assign verify = phase.verify %}
 
 <div class="panel panel-success">
