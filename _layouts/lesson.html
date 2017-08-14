@@ -3,8 +3,8 @@ layout: base
 ---
 <span>{{ page.class }} ........ клас</span>
 <span class="pull-right">
-  {% assign m = page.date | date: "%-m" %}
-  {{ page.date | date: "%-d" }}
+  {% assign m = page.calendar | date: "%-m" %}
+  {{ page.calendar | date: "%-d" }}
   {% case m %}
     {% when '1' %}януари
     {% when '2' %}февруари
@@ -19,7 +19,7 @@ layout: base
     {% when '11' %}ноември
     {% when '12' %}декември
   {% endcase %}
-  {{ page.date | date: "%Y" }}
+  {{ page.calendar | date: "%Y" }}
 </span>
 <div>Помощник-учител: ................................</div>
 <br>
