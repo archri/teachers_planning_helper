@@ -2,6 +2,7 @@
 layout: base
 title: Уроците на г-н "Х"
 ---
+{{ site.baseurl }}
 {% for lesson in site.lessons %}
   {% capture url %}{{ site.baseurl }}{{ lesson.url }}{% endcapture %}
   <a href="{{ url }}">{{ lesson.title }}</a><br>
