@@ -1,0 +1,7 @@
+---
+layout: base
+title: Уроците на г-н "Х"
+---
+{% for lesson in site.lessons %}
+  <a href="{{ lesson.url }}">{{ lesson.title }}</a><br>
+{% endfor %}
