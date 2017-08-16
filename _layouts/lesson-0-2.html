@@ -1,0 +1,52 @@
+---
+layout: base
+---
+<span>{{ page.class }} ........ клас</span>
+<span class="pull-right">
+  {% assign m = page.calendar | date: "%-m" %}
+  {{ page.calendar | date: "%-d" }}
+  {% case m %}
+    {% when '1' %}януари
+    {% when '2' %}февруари
+    {% when '3' %}март
+    {% when '4' %}април
+    {% when '5' %}май
+    {% when '6' %}юни
+    {% when '7' %}юли
+    {% when '8' %}август
+    {% when '9' %}септември
+    {% when '10' %}октомври
+    {% when '11' %}ноември
+    {% when '12' %}декември
+  {% endcase %}
+  {{ page.calendar | date: "%Y" }}
+</span>
+<div>Помощник-учител: ................................</div>
+<br>
+<div class="panel-group">
+  {% include panel_aims.html page=page %}
+  {% if page.base %}
+    {% include panel_base.html base = page.base %}
+  {% endif %}
+  {% if page.prepare %}
+    {% include panel_0_prepare.html phase=page.prepare %}
+  {% endif %}
+</div>
+
+<div class="panel-group">
+  {% if page.engage %}
+    {% include panel_1_engage.html page=page %}
+  {% endif %}
+  {% if page.explore %}
+    {% include panel_2_explore.html phase=page.explore %}
+  {% endif %}
+  {% if page.explain %}
+    {% include panel_3_explain.html phase=page.explain %}
+  {% endif %}
+  {% if page.elaborate %}
+    {% include panel_4_elaborate.html phase=page.elaborate %}
+  {% endif %}
+  {% if page.evaluate %}
+    {% include panel_5_evaluate.html phase=page.evaluate %}
+  {% endif %}
+</div>

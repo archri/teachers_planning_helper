@@ -19,7 +19,7 @@
   </div>
   <div class="panel-body">
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-sm-5">
         Какво
         <ul>
         {% for activity in content.what %}
@@ -27,7 +27,7 @@
         {% endfor %}
         </ul>
       </div>
-      <div class="col-sm-3">
+      <div class="col-sm-5">
         Как
         <ul>
         {% for activity in content.how %}
@@ -35,7 +35,7 @@
         {% endfor %}
         </ul>
       </div>
-      <div class="col-sm-3">
+      <div class="col-sm-2">
         <p>Колко време? {{ time | minus:3 }} минути
         </p>
         <p><strong>Проверка на разбирането</strong></p>
@@ -49,10 +49,12 @@
       </div>
     </div>
   </div>
-  <div class="panel-footer">
-    Постигнахме ли целта?<br>
-    {% for check in verify %}
-      <input type="checkbox">{{ check }}<br>
-    {% endfor %}
-  </div>
+  {% if verify %}
+    <div class="panel-footer">
+      Постигнахме ли целта?<br>
+      {% for check in verify %}
+        <input type="checkbox">{{ check }}<br>
+      {% endfor %}
+    </div>
+  {% endif %}
 </div>

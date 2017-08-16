@@ -1,3 +1,4 @@
+{% assign phase = include.phase %}
 <div class="panel panel-default">
   <div class="panel-heading">
     <div class="row-fluid">
@@ -32,10 +33,5 @@
         </ul>
       </div>
     </div>
-    <ul>
-    {% for activity in include.phase.content %}
-      <li>{{ activity }}</li>
-    {% endfor %}
-    </ul>
   </div>
 </div>

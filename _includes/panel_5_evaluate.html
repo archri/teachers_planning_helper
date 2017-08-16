@@ -24,10 +24,12 @@
     {% endfor %}
     </ul>
   </div>
-  <div class="panel-footer">
-    Постигнахме ли целта?<br>
-    {% for check in verify %}
-      <input type="checkbox">{{ check }}<br>
-    {% endfor %}
-  </div>
+  {% if verify %}
+    <div class="panel-footer">
+      Постигнахме ли целта?<br>
+      {% for check in verify %}
+        <input type="checkbox">{{ check }}<br>
+      {% endfor %}
+    </div>
+  {% endif %}
 </div>
