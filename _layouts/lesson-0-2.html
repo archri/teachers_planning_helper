@@ -46,6 +46,9 @@ layout: base
   {% if page.elaborate %}
     {% include panel_4_elaborate.html phase=page.elaborate %}
   {% endif %}
+  {% if page.elaborate.matrix %}
+    {% include panel_criteria_matrix.html phase=page.elaborate %}
+  {% endif %}
   {% if page.evaluate %}
     {% include panel_5_evaluate.html phase=page.evaluate %}
   {% endif %}
