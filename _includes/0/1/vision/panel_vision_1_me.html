@@ -1,0 +1,21 @@
+{% assign phase = include.phase %}
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="row-fluid">
+      <span class="glyphicon glyphicon-align-justify"></span>
+      Кой съм аз?
+    </div>
+  </div>
+  <div class="panel-body">
+    {% for row in phase %}
+      <div class="row">
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-8">
+
+        </div>
+      </div>
+      <li>{{ activity }}</li>
+    {% endfor %}
+  </div>
+</div>
