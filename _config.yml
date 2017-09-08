@@ -42,3 +42,5 @@ exclude:
 collections:
   lessons:
     output: true
+  visions:
+    output: true

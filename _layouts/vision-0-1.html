@@ -1,0 +1,45 @@
+---
+layout: base
+---
+<span>{{ page.class }} ........ клас</span>
+<span class="pull-right">
+  {% assign m = page.calendar | date: "%-m" %}
+  {{ page.calendar | date: "%-d" }}
+  {% case m %}
+    {% when '1' %}януари
+    {% when '2' %}февруари
+    {% when '3' %}март
+    {% when '4' %}април
+    {% when '5' %}май
+    {% when '6' %}юни
+    {% when '7' %}юли
+    {% when '8' %}август
+    {% when '9' %}септември
+    {% when '10' %}октомври
+    {% when '11' %}ноември
+    {% when '12' %}декември
+  {% endcase %}
+  {{ page.calendar | date: "%Y" }}
+</span>
+<br>
+<div class="panel-group">
+  {% assign phase=page.phases[0] %}
+  {% include 0/1/vision/panel_vision_1_me.html phase=phase %}
+</div>
+
+<div class="panel-group">
+  {% assign phase=page.phases[1]%}
+  {% include panel_1_engage.html page=page %}
+
+  {% assign phase=page.phases[2]%}
+  {% include panel_2_explore.html phase=phase %}
+
+  {% assign phase=page.phases[3]%}
+  {% include panel_3_explain.html phase=phase %}
+
+  {% assign phase=page.phases[4]%}
+  {% include panel_4_elaborate.html phase=phase %}
+
+  {% assign phase=page.phases[5]%}
+  {% include panel_5_evaluate.html phase=phase %}
+</div>
